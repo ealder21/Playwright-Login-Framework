@@ -8,7 +8,7 @@ from POMProject.Utils import fixed_data as fixed_data
 
 
 #4: Create test case
-def test_valid_login(page:Page):
+def test_valid_login(page):
     login_page = LoginPage(page) #Access LoginPage methods
     login_page.enter_username(fixed_data.username) #Enter username, data coming from fixed_data file
     login_page.enter_password(fixed_data.password) #Enter password, data coming from fixed_data file
