@@ -2,6 +2,7 @@
 import pytest
 from playwright.sync_api import Page, expect
 from PytestPlaywright_NewSetup.Pages.loginPage_page import LoginPage
+from PytestPlaywright_NewSetup.Pages.landingPage_page import LandingPage
 from PytestPlaywright_NewSetup.utils import fixed_data as fixed_data
 
 
@@ -26,12 +27,12 @@ from PytestPlaywright_NewSetup.utils import fixed_data as fixed_data
 
 
 #Navigate to webpage and login
-def test_login(log_into_site):
+def test_login(log_into_site): #Uses fixture from conftest.py
     login = LoginPage(log_into_site)
-    expect(login.verify_login_message)
-
+    expect(login.verify_login_message).to_be_visible()
 
 
 #Navigate to webpage
-def test_navigate_to_webpage(navigate_to_webpage):
-    LoginPage(navigate_to_webpage)
+def test_navigate_to_webpage(navigate_to_webpage): #Uses fixture from conftest.py
+    landing_page = LandingPage(navigate_to_webpage)
+    expect(landing_page.verify_landingPage_message).to_be_visible()

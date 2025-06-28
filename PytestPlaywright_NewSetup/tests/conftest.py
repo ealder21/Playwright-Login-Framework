@@ -15,13 +15,12 @@ def log_into_site(page): #Name fixture
     login_page.enter_username(fixed_data.username) #Enter username, data coming from fixed_data file
     login_page.enter_password(fixed_data.password) #Enter password, data coming from fixed_data file
     login_page.click_login_button() #Click button
-    return page
+    return page #Return Playwright page object
 
 
-#expect(login_page.verify_login_message).to_be_visible() # Verify successful login
 
 # Navigate to the webpage
 @pytest.fixture() #Add fixture
-def navigate_to_webpage(page): #Name fixture
+def navigate_to_webpage(page): #Name fixture and pass Playwright page fixture
     page.goto(baseURL) #Navigate to browser
-    return page
+    return page #Return Playwright page object
