@@ -51,7 +51,7 @@ def verify_login(page:Page):#Function name. Makes use of the Pytest-Playwright b
 
 #----------------------------------------------------------------------------------------------------------------
 #Example of using the login fixture
-
+#
 # @given("The user has launched the browser and is on the login page") #Given step from feature file
 # def login_to_site(log_in_to_website): #Login fixture from conftest.py file
 #     login_page = LoginPage(log_in_to_website) #Use fixture in test
